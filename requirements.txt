@@ -1,0 +1,15 @@
+# Pose: YOLOv8-Pose + YOLOv8 detect (objects). First run downloads weights.
+# Default detect: yolov8s.pt (set YOLO_DETECT_MODEL=yolov8m.pt for more accuracy, slower).
+# Object pass: higher imgsz than pose by default (YOLO_DETECT_IMGSZ_FLOOR=1280, _CAP=1920).
+# Tuning: YOLO_DETECT_CONF | YOLO_DETECT_IOU | YOLO_DETECT_AUGMENT=1 | YOLO_DETECT_AGNOSTIC_NMS=1
+# YOLO_DETECT_OBJECTS=0 disables object detection.
+# Posture: default = video lateral head motion only (LATERAL_* env). Photos = neutral pose unless phone.
+# POSTURE_LEGACY_STATIC=1 restores old head-turn/lean rules (noisy for exam halls).
+ultralytics>=8.3.0
+opencv-python
+numpy
+streamlit>=1.33.0
+Pillow
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
