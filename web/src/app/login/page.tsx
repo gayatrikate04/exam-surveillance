@@ -14,7 +14,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
-function FieldIcon({ children, className }: { children: React.ReactNode; className?: string }) {
+function FieldIcon({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <span
       className={cn(
@@ -52,7 +58,9 @@ export default function LoginPage() {
       router.push("/");
       router.refresh();
     } catch {
-      setError("Could not reach the server. Check your connection and try again.");
+      setError(
+        "Could not reach the server. Check your connection and try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -63,7 +71,9 @@ export default function LoginPage() {
       footer={
         <span>
           Secure local sign-in ·{" "}
-          <span className="text-foreground/70">Agesight Exam Activity Monitor</span>
+          <span className="text-foreground/70">
+            IntegrityX AI-Powered Exam Surveillance and Campus Safety System
+          </span>
         </span>
       }
     >
@@ -73,7 +83,10 @@ export default function LoginPage() {
       >
         <form onSubmit={onSubmit} className="space-y-6">
           {error ? (
-            <Alert variant="destructive" className="border-destructive/30 bg-destructive/5">
+            <Alert
+              variant="destructive"
+              className="border-destructive/30 bg-destructive/5"
+            >
               <AlertDescription className="text-sm">{error}</AlertDescription>
             </Alert>
           ) : null}
@@ -122,7 +135,12 @@ export default function LoginPage() {
             </div>
           </div>
 
-          <Button type="submit" size="lg" className="h-11 w-full text-sm font-medium" disabled={loading}>
+          <Button
+            type="submit"
+            size="lg"
+            className="h-11 w-full text-sm font-medium"
+            disabled={loading}
+          >
             {loading ? (
               <>
                 <Loader2 className="size-4 animate-spin" />
@@ -133,7 +151,11 @@ export default function LoginPage() {
             )}
           </Button>
 
-          <AuthFooterLink prompt="Don't have an account?" href="/register" linkLabel="Create one" />
+          <AuthFooterLink
+            prompt="Don't have an account?"
+            href="/register"
+            linkLabel="Create one"
+          />
         </form>
       </AuthFormCard>
     </AuthPageShell>

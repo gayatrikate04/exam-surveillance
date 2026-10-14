@@ -14,7 +14,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
-function FieldIcon({ children, className }: { children: React.ReactNode; className?: string }) {
+function FieldIcon({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <span
       className={cn(
@@ -52,7 +58,9 @@ export default function RegisterPage() {
       router.push("/");
       router.refresh();
     } catch {
-      setError("Could not reach the server. Check your connection and try again.");
+      setError(
+        "Could not reach the server. Check your connection and try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -63,7 +71,9 @@ export default function RegisterPage() {
       footer={
         <span>
           Secure local sign-up ·{" "}
-          <span className="text-foreground/70">Agesight Exam Activity Monitor</span>
+          <span className="text-foreground/70">
+            IntegrityX AI-Powered Exam Surveillance and Campus Safety System
+          </span>
         </span>
       }
     >
@@ -73,7 +83,10 @@ export default function RegisterPage() {
       >
         <form onSubmit={onSubmit} className="space-y-6">
           {error ? (
-            <Alert variant="destructive" className="border-destructive/30 bg-destructive/5">
+            <Alert
+              variant="destructive"
+              className="border-destructive/30 bg-destructive/5"
+            >
               <AlertDescription className="text-sm">{error}</AlertDescription>
             </Alert>
           ) : null}
@@ -121,12 +134,18 @@ export default function RegisterPage() {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                Use 6 or more characters. Avoid reusing passwords from other services.
+                Use 6 or more characters. Avoid reusing passwords from other
+                services.
               </p>
             </div>
           </div>
 
-          <Button type="submit" size="lg" className="h-11 w-full text-sm font-medium" disabled={loading}>
+          <Button
+            type="submit"
+            size="lg"
+            className="h-11 w-full text-sm font-medium"
+            disabled={loading}
+          >
             {loading ? (
               <>
                 <Loader2 className="size-4 animate-spin" />
@@ -137,7 +156,11 @@ export default function RegisterPage() {
             )}
           </Button>
 
-          <AuthFooterLink prompt="Already have an account?" href="/login" linkLabel="Sign in" />
+          <AuthFooterLink
+            prompt="Already have an account?"
+            href="/login"
+            linkLabel="Sign in"
+          />
         </form>
       </AuthFormCard>
     </AuthPageShell>

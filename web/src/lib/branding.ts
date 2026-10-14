@@ -1,2 +1,2 @@
-export const APP_BRAND = "Agesight";
-export const APP_TITLE = "Agesight - Exam Activity Monitor";
+export const APP_BRAND = "IntegrityX";
+export const APP_TITLE = "IntegrityX Al-powered Exam Surveillance and Campus Safety System";

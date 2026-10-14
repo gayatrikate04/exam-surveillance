@@ -36,17 +36,24 @@ export function AuthBrandPanel({ className }: { className?: string }) {
 
       <div className="relative z-10">
         <div className="mb-8 flex size-12 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/20 backdrop-blur-sm">
-          <span className="font-heading text-xl font-semibold tracking-tight">A</span>
+          <span className="font-heading text-xl font-semibold tracking-tight">
+            I
+          </span>
         </div>
-        <h1 className="font-heading text-4xl font-semibold tracking-tight lg:text-5xl">{APP_BRAND}</h1>
+        <h1 className="font-heading text-4xl font-semibold tracking-tight lg:text-5xl">
+          {APP_BRAND}
+        </h1>
         <p className="mt-3 max-w-sm text-base leading-relaxed text-white/75">
-          Exam activity monitoring for classrooms and proctored sessions.
+          AI-Powered Exam Surveillance and Campus Safety System
         </p>
       </div>
 
       <ul className="relative z-10 mt-12 hidden space-y-4 sm:block">
         {FEATURES.map(({ icon: Icon, label }) => (
-          <li key={label} className="flex items-center gap-3 text-sm text-white/85">
+          <li
+            key={label}
+            className="flex items-center gap-3 text-sm text-white/85"
+          >
             <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
               <Icon className="size-4" strokeWidth={1.75} />
             </span>
@@ -74,8 +81,12 @@ export function AuthPageShell({
 
         <main className="flex flex-col">
           <div className="border-b px-6 py-8 lg:hidden">
-            <p className="font-heading text-2xl font-semibold tracking-tight">{APP_BRAND}</p>
-            <p className="mt-1 text-sm text-muted-foreground">Exam activity monitor</p>
+            <p className="font-heading text-2xl font-semibold tracking-tight">
+              {APP_BRAND}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Exam Surveillance and Campus Safety System
+            </p>
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center px-6 py-10 sm:px-10">
@@ -105,8 +116,14 @@ export function AuthFormCard({
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <h2 className="font-heading text-2xl font-semibold tracking-tight text-foreground">{title}</h2>
-        {description ? <p className="text-sm leading-relaxed text-muted-foreground">{description}</p> : null}
+        <h2 className="font-heading text-2xl font-semibold tracking-tight text-foreground">
+          {title}
+        </h2>
+        {description ? (
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+        ) : null}
       </header>
       {children}
     </div>
