@@ -5,6 +5,7 @@ import os
 import threading
 from collections import deque
 from typing import Any, Deque, Dict, List, Optional, Sequence, Tuple
+from weapon_detection import detect_and_draw_weapons
 
 import cv2
 import numpy as np
@@ -890,6 +891,13 @@ def process_frame_multi(
     vis = _overlay_visual_scale(h, w)
     statuses: List[Status] = []
     summary = _empty_summary()
+    # Independent of pose detection: weapon detection must still run when no
+    # person/keypoints are found.
+    image, weapon_detections, weapon_status = detect_and_draw_weapons(image)
+    summary["weapons"] = weapon_detections
+    summary["weapon_count"] = len(weapon_detections)
+    summary["weapon_detection_status"] = weapon_status
+    summary["weapon_alert"] = bool(weapon_detections)
 
     ov_raw = str(exam_overlay or "full").strip().lower()
     ov = ov_raw if ov_raw in ("full", "minimal", "none") else "full"
